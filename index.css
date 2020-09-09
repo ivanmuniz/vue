@@ -1,0 +1,32 @@
+.info {
+    font-size: 24pt;
+}
+
+.display-1 {
+    font-size: 4rem !important;
+    color: rgb(238, 96, 71);
+    border-bottom: 1px solid rgb(207, 193, 193);
+    background-color: #fcfcfc;
+}
+
+@media (min-width: 600px) and (max-width: 990px) {
+    .card {
+        margin: 0 auto;
+        width: 18rem;
+    }
+    .display-1 {
+        font-size: 5rem !important;
+    }
+}
+
+@media (min-width: 991px) {
+    .display-1 {
+        font-size: 6rem !important;
+    }
+
+    .card {
+        margin: 0 auto;
+        width: 18rem;
+        margin-left: 0px;
+    }
+}

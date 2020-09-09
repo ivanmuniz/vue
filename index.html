@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas</title>
+
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <main>
+        <h1 class="text-center display-1">Encuentra fotos de perritos!</h1>
+        <div id="dog" class="text-center">
+            <!-- <dog-card
+                v-if="responseAvailable"
+                v-bind:image="image"
+                v-bind:func="fetchDogsAPI">
+            </dog-card> -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md col-lg-4">
+                        <div class="card">
+                            <img :src="image" v-if="responseAvailable" class="card-img-top" alt="Foto de un perrito">
+                            <div class="card-body">
+                                <button class="btn btn-primary mt-2" type="button" id="get-dog" @click="fetchDogsAPI">Actualizar foto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md col-lg-8 text-left">
+                        <p v-if="name.trim()" class="display-4">Hola {{ name }}!</p>
+                        <p class="info">Haz clic en el boton de actualizar foto para desplegar una foto de un perrito al azar</p>
+                        <form class="d-inline-block">
+                            <label class="d-block" for="name">Ingrese su nombre para saludarlo</label>
+                            <input class="w-100 form-control" type="text" v-model="name" name="" id="name" placeholder="Ej. Juan Pérez">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dogs-list" class="container mt-2 mb-2">
+            <div v-if="display" >
+                <h3>Imagenes de perros {{ breed }}</h3>
+                <div class="row" >
+                    <img
+                        class="col-sm-6 col-md-4 col-lg-3 mb-2"
+                        v-for="image in images"
+                        v-bind:src="image"/>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-secondary" @click="toggleDisplay"> {{ button }}</button>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- JS -->
+    <script src="./app.js"></script>
+
+    <!-- jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
